@@ -31,6 +31,13 @@ jobs:
       - name: bash -e
         shell: pixi run bash -e {0}
         run: pixi list
+      - name: print bash env files
+        shell: bash -el {0}
+        run: |
+          cat ~/.bashrc || true
+          cat ~/.bash_profile || true
+          cat ~/.profile || true
+          cat ~/.bash_login || true
       - name: bash -el
         shell: pixi run bash -el {0}
         run: pixi list
