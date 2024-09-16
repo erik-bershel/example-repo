@@ -26,6 +26,11 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.8.1
         with:
           manifest-path: pixi.toml
-      - run: pixi list
-      - run: pixi list
+      - name: no bash
+        run: pixi list
+      - name: bash -e
+        shell: pixi run bash -e {0}
+        run: pixi list
+      - name: bash -el
         shell: pixi run bash -el {0}
+        run: pixi list
