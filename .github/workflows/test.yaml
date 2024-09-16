@@ -9,9 +9,9 @@ on:
   workflow_dispatch:
     inputs:
 
-defaults:
-  run:
-    shell: bash -el {0}
+# defaults:
+#   run:
+#     shell: bash -el {0}
 
 jobs:
   pixi:
@@ -27,3 +27,5 @@ jobs:
         with:
           manifest-path: pixi.toml
       - run: pixi list
+      - run: pixi list
+        shell: pixi run bash -el {0}
