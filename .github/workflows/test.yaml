@@ -29,22 +29,22 @@ jobs:
           cat ~/.bash_profile || true
           cat ~/.profile || true
           cat ~/.bash_login || true
-      - uses: actions/checkout@v4
-      - uses: prefix-dev/setup-pixi@v0.8.1
-        with:
-          manifest-path: pixi.toml
-      - name: no bash
-        run: pixi list
-      - name: bash -e
-        shell: pixi run bash -e {0}
-        run: pixi list
-      - name: print bash env files
-        shell: bash -el {0}
-        run: |
-          cat ~/.bashrc || true
-          cat ~/.bash_profile || true
-          cat ~/.profile || true
-          cat ~/.bash_login || true
-      - name: bash -el
-        shell: pixi run bash -el {0}
-        run: pixi list
+      # - uses: actions/checkout@v4
+      # - uses: prefix-dev/setup-pixi@v0.8.1
+      #   with:
+      #     manifest-path: pixi.toml
+      # - name: no bash
+      #   run: pixi list
+      # - name: bash -e
+      #   shell: pixi run bash -e {0}
+      #   run: pixi list
+      # - name: print bash env files
+      #   shell: bash -el {0}
+      #   run: |
+      #     cat ~/.bashrc || true
+      #     cat ~/.bash_profile || true
+      #     cat ~/.profile || true
+      #     cat ~/.bash_login || true
+      # - name: bash -el
+      #   shell: pixi run bash -el {0}
+      #   run: pixi list
